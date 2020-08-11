@@ -1,0 +1,97 @@
+<%- include ("./partials/header")  %>
+
+<div class="ui aligned center aligned grid" id = "form-top">
+  <div class="column">
+    <h2 class="ui inverted image header">
+    <i class="id card outline outline icon"></i>
+      <div class="content">
+        Log in to your account
+      </div>
+    </h2>
+    <form class="ui large form" action="/login" method="post">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon loginIcon"></i>
+            <input type="text" name="username" placeholder="Username">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon loginIcon"></i>
+            <input type="password" name="password" placeholder="Password">
+          </div>
+        </div>
+        <button class="fluid ui inverted primary button">Login</button>
+
+      </div>
+
+
+      <div class="ui error message"></div>
+
+    </form>
+
+    <div class="ui message">
+      New to Insight? <a href="/register">Sign Up</a>
+    </div>
+  </div>
+</div>
+
+
+<style type="text/css">
+    body {
+      background-color: grey;
+      background-image: url(https://images.unsplash.com/photo-1544207916-df3b3a131e35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+
+    }
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+
+
+
+  </style>
+
+  <script>
+  $(document)
+    .ready(function() {
+      $('.ui.form')
+        .form({
+          fields: {
+            email: {
+              identifier  : 'username',
+              rules: [
+                {
+                  type   : 'length[0]',
+                  prompt : 'Please enter your username'
+                },
+              ]
+            },
+            password: {
+              identifier  : 'password',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Please enter your password'
+                },
+                {
+                  type   : 'length[6]',
+                  prompt : 'Passwords are at least 6 characters long'
+                }
+              ]
+            }
+          }
+        })
+      ;
+    })
+  ;
+  </script>
+
+
+<%- include ("./partials/footer")  %>

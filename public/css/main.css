@@ -1,0 +1,76 @@
+.thumbnail img {
+  width: 100%;
+}
+
+.thumbnail {
+  padding: 0;
+}
+
+.delete-form {
+  display: inline;
+}
+
+.choices {
+  font-size: 2em;
+}
+
+.iconsleft {
+  opacity: 0.6;
+}
+
+.iconsleft:hover {
+  opacity: 1;
+}
+
+i {
+  color:white;
+}
+
+.icontext {
+  color:white;
+}
+
+.icontext.dash {
+  font-size: 0.5em;
+    opacity: 0.6;
+}
+
+.icontext.dash:hover {
+
+    opacity: 1;
+}
+
+.icontext:hover {
+  color:white;
+}
+
+.iconsright {
+  opacity: 0.6;
+}
+
+.iconsright:hover {
+  opacity: 1;
+}
+.divider {
+  font-size: 4em;
+}
+
+.loginIcon {
+  color:black;
+}
+
+.dropdown-toggle{
+  opacity: 0.7;
+}
+
+.dropdown-toggle:hover{
+  opacity: 1;
+}
+
+.filtericons {
+  color:black;
+}
+
+#form-top{
+  margin-top:100px;
+}

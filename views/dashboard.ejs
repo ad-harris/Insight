@@ -1,0 +1,210 @@
+<%- include ("./partials/header")  %>
+
+
+
+<div class="container">
+
+
+<h1 class="ui inverted header">Shared dashboards:</h1>
+
+
+  <div class="row choices">
+    <div class="col-lg-2"> </div>
+      <div class="col-lg-8">
+        <div class="ui four column stackable center aligned grid">
+            <div class="middle aligned row icons">
+
+              <div class="column">
+                <div class="ui inverted icon header  iconsleft">
+                  <a class="icontext dash" href="/show/COVID"><i class="heart icon"></i>
+                    COVID-19</a>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="ui inverted icon header iconsleft ">
+                  <a class="icontext dash dash" href="#"><i class="handshake outline  icon"></i>
+                    Brexit</a>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="ui inverted icon header iconsleft ">
+                  <a class="icontext dash" style="text-decoration:none" href="#">
+                    <i class="bus icon"></i>
+                    Transport
+                  </a>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="ui inverted icon header iconsleft">
+                  <a class="icontext dash" style="text-decoration:none" href="#">
+                    <i class="user md icon"></i>
+                    Healthcare
+                  </a>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+
+
+          <div class="ui four column stackable center aligned grid">
+              <div class="middle aligned row icons">
+
+                <div class="column">
+                  <div class="ui inverted icon header iconsleft ">
+                    <a class="icontext dash" href="/report"><i class="envira  icon"></i>
+                      Environment</a>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="ui inverted icon header iconsleft ">
+                    <a class="icontext dash" href="#"><i class="graduation cap icon"></i>
+                      Education</a>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="ui inverted icon header iconsleft">
+                    <a class="icontext dash" style="text-decoration:none" href="#">
+                      <i class="university icon"></i>
+                      Economy
+                    </a>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="ui inverted icon header iconsleft">
+                    <a class="icontext dash" style="text-decoration:none" href="#">
+                      <i class="universal access icon"></i>
+                      Social Care
+                    </a>
+                  </div>
+                </div>
+
+
+
+
+              </div>
+            </div>
+
+            <div class="ui four column stackable center aligned grid">
+                <div class="middle aligned row icons">
+
+                  <div class="column">
+                    <div class="ui inverted icon header iconsleft">
+                      <a class="icontext dash" href="/report"><i class="money bill alternate outline  icon"></i>
+                        Tax & Pensions</a>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <div class="ui inverted icon header iconsleft">
+                      <a class="icontext dash" href="#"><i class="lightbulb outline icon"></i>
+                        Science & Tech</a>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <div class="ui inverted icon header iconsleft">
+                      <a class="icontext dash" style="text-decoration:none" href="#">
+                        <i class="gavel icon"></i>
+                        Crime & Justice
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <div class="ui inverted icon header iconsleft">
+                      <a class="icontext dash" style="text-decoration:none" href="#">
+                        <i class="fighter jet icon"></i>
+                        Defense & Security
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+        </div>
+
+
+      </div>
+      <h1 class="ui inverted header">Personal dashboards:</h1>
+
+
+        <div class="row choices">
+          <div class="col-lg-1"> </div>
+            <div class="col-lg-10">
+              <div class="ui four column stackable center aligned grid">
+                  <div class="middle aligned row icons">
+                        <% campgrounds.forEach(function(campground){ %>
+                          <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+
+                          <div class="column">
+                            <div class="ui inverted icon header iconsleft  ">
+                              <a class="icontext dash" href="/campgrounds/<%=campground._id %>"><i class="react  icon"></i>
+                               <%= campground.DashboardName %></a>
+                            </div>
+                              <% } %>
+                          </div>
+                          <%  });   %>
+
+
+
+
+                    <div class="column">
+                      <div class="ui inverted icon header iconsleft  ">
+                        <a class="icontext dash" href="/campgrounds/new"><i class="plus   icon"></i>
+                          Add new</a>
+                      </div>
+                    </div>
+
+                    </div>
+                  </div>
+
+
+
+
+                      </div>
+                    </div>
+              </div>
+
+
+
+
+
+
+
+
+  <style type="text/css">
+      body {
+        background-color: grey;
+        background-image: url(https://images.unsplash.com/photo-1544207830-96239228a679?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+
+      }
+
+      #index-header {
+        z-index: 1;
+        position: relative;
+        text-align: center;
+        padding-top: 20vh;
+      }
+
+      #index-header h1 {
+        color: #fff;
+      }
+
+
+    </style>
+
+
+
+
+
+
+<%- include ("./partials/footer")  %>

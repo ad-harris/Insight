@@ -1,0 +1,130 @@
+<%- include ("../partials/header")  %>
+
+
+
+<div class="ui aligned center aligned grid" id = "form-top">
+  <div class="column">
+    <h2 class="ui inverted image header">
+    <i class=" plus icon"></i>
+      <div class="content">
+        Create new Dashboard
+      </div>
+    </h2>
+    <form class="ui large form" action="/campgrounds" method="post">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="edit outline icon loginIcon"></i>
+            <input type="text" name="DashboardName" placeholder="Dashboard Name">
+          </div>
+        </div>
+        <div class="field">
+          <label>Hashtag 1</label>
+          <div class="ui left icon input">
+            <i class="hashtag icon loginIcon"></i>
+              <input type="text" name="Hashtag1" placeholder="Enter the hashtags you wish to include separated by #">          </div>
+        </div>
+        <div class="two fields">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="map icon loginIcon"></i>
+              <input type="text" name="Location1" placeholder="Location">          </div>
+        </div>
+        <div class="field">
+          <div class="form-group">
+             <select class="form-control" id="exampleFormControlSelect1">
+               <option>Twitter</option>
+               <option>Facebook</option>
+               <option>Tumblr</option>
+               <option>Reddit</option>
+               <option>Viadeo</option>
+             </select>
+           </div>
+        </div>
+        </div>
+        <div class="field">
+            <label>Hashtag 2</label>
+          <div class="ui left icon input">
+            <i class="hashtag icon loginIcon"></i>
+              <input type="text" name="Hashtag2" placeholder="Enter the hashtags you wish to include separated by #">          </div>
+        </div>
+        <div class="two fields">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="map icon loginIcon"></i>
+              <input type="text" name="Location2" placeholder="Location">          </div>
+        </div>
+        <div class="field">
+          <div class="form-group">
+             <select class="form-control" id="exampleFormControlSelect1">
+               <option>Twitter</option>
+               <option>Facebook</option>
+               <option>Tumblr</option>
+               <option>Reddit</option>
+               <option>Viadeo</option>
+             </select>
+           </div>
+        </div>
+        </div>
+        <div class="field">
+          <label>Hashtag 3</label>
+          <div class="ui left icon input">
+            <i class="hashtag icon loginIcon"></i>
+              <input type="text" name="Hashtag3" placeholder="Enter the hashtags you wish to include separated by #">          </div>
+        </div>
+        <div class="two fields">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="map icon loginIcon"></i>
+              <input type="text" name="Location3" placeholder="Location">          </div>
+        </div>
+        <div class="field">
+          <div class="form-group">
+             <select class="form-control" id="exampleFormControlSelect1">
+               <option>Twitter</option>
+               <option>Facebook</option>
+               <option>Tumblr</option>
+               <option>Reddit</option>
+               <option>Viadeo</option>
+             </select>
+           </div>
+        </div>
+        </div>
+
+
+
+        <button class=" ui inverted secondary button"><i class="plus icon loginIcon"></i>Add another hashtag</button>
+
+<br>
+<p></p>
+        <button class="fluid ui inverted primary button">Create</button>
+
+      </div>
+
+
+      <div class="ui error message"></div>
+
+    </form>
+
+  </div>
+</div>
+
+
+<style type="text/css">
+    body {
+      background-color: grey;
+      background-image: url(https://images.unsplash.com/photo-1544207916-df3b3a131e35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+
+    }
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+  </style>
+
+<%- include ("../partials/footer")  %>

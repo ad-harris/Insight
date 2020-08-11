@@ -1,0 +1,43 @@
+{
+  "name": "twitter-sentiment-visualizer",
+  "version": "1.0.0",
+  "description": "An AngularJS 1.6 and node.js twitter sentiment analysis visualizer web application, to visualize and analyze active twitter data  ",
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Afischbacher/twitter-sentiment-visualizer.git"
+  },
+  "author": "Andre Fischbacher",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Afischbacher/twitter-sentiment-visualizer/issues"
+  },
+  "homepage": "https://github.com/Afischbacher/twitter-sentiment-visualizer#readme",
+  "dependencies": {
+    "async": "^2.6.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^4.0.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "neo-async": "^2.6.2",
+    "npm-install-all": "^1.1.21",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1",
+    "preprocess-tweets": "0.0.3",
+    "sentiment": "^3.0.1",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.2.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.5"
+  }
+}

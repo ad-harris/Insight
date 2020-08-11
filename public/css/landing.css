@@ -1,0 +1,111 @@
+
+background-slider/public/stylesheets/landing.css
+@nax3t
+nax3t Add full screen background slider
+Latest commit 2b7359f on 26 Nov 2016
+ History
+ 1 contributor
+82 lines (75 sloc)  1.42 KB
+
+body {
+  background-color: #000;
+}
+
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+#landing-header h1 {
+  color: #fff;
+}
+
+.logo {
+  width: 15%;
+	filter: invert(100%)
+}
+
+.logo1 {
+  width:10.5%;
+  filter: invert(100%);
+  margin-right: 2em;
+}
+
+.logo2 {
+  width:14%;
+  filter: invert(100%)
+}
+
+.slideshow {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite;
+}
+
+.slideshow li:nth-child(1) {
+  background-image: url(https://images.unsplash.com/photo-1544207916-df3b3a131e35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)
+}
+.slideshow li:nth-child(2) {
+  background-image: url(https://images.unsplash.com/photo-1544207916-df3b3a131e35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+  animation-delay: 10s;
+}
+.slideshow li:nth-child(3) {
+  background-image: url(https://images.unsplash.com/photo-1544207916-df3b3a131e35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+  animation-delay: 20s;
+}
+.slideshow li:nth-child(4) {
+  background-image: url(https://images.unsplash.com/photo-1544207916-df3b3a131e35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+  animation-delay: 30s;
+}
+.slideshow li:nth-child(5) {
+  background-image: url(https://images.unsplash.com/photo-1544207916-df3b3a131e35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+  animation-delay: 40s;
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 1;
+    filter: brightness(50%);
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    filter: brightness(200%);
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1;
+    filter: brightness(50%);
+  }
+  30% {
+    opacity: 1;
+    filter: brightness(50%);
+  }
+}
+
+/* Older browser support - class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
