@@ -47,12 +47,21 @@ app.get('/results/:query', function (req, res) {
 var url = "mongodb://localhost:27017/SocialInsight";
 
 //connect to DB
-mongoose.connect(url, {
+// mongoose.connect(url, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   })
+//   .then(() =>  console.log("Social Insight Database is connected"))
+//   .catch(error => console.log(error.message));
+
+mongoose.connect('mongodb+srv://harris:1234@insight.b4fnl.mongodb.net/insight?retryWrites=true&w=majority',{
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  })
-  .then(() =>  console.log("Social Insight Database is connected"))
+  useCreateIndex: true,
+  useUnifiedTopology: true
+}).then(() =>  console.log("Social Insight Database is connected"))
   .catch(error => console.log(error.message));
+
+
 
 //seedDB()
 
