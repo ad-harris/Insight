@@ -7,7 +7,7 @@
     <h2 class="ui inverted image header">
     <i class=" plus icon"></i>
       <div class="content">
-        Edit the <%=campground.DashboardName %> Dashboard
+        Edit the <%=dashboard.DashboardName %> Dashboard
       </div>
     </h2>
     <form class="ui large form" action="/campgrounds/<%=campground._id%>?_method=PUT" method="post">
@@ -15,20 +15,20 @@
         <div class="field">
           <div class="ui left icon input">
             <i class="edit outline icon loginIcon"></i>
-            <input type="text" name="campground[DashboardName]" value="<%=campground.DashboardName%>">
+            <input type="text" name="dashboard[DashboardName]" value="<%=dashboard.DashboardName%>">
           </div>
         </div>
         <div class="field">
           <label>Hashtag 1</label>
           <div class="ui left icon input">
             <i class="hashtag icon loginIcon"></i>
-              <input type="text" name="Hashtag1" value="<%=campground.Hashtag1%>">          </div>
+              <input type="text" name="Hashtag1" value="<%=dashboard.Hashtag1%>">          </div>
         </div>
         <div class="two fields">
         <div class="field">
           <div class="ui left icon input">
             <i class="map icon loginIcon"></i>
-              <input type="text" name="Location1" value="<%=campground.Location1%>">         </div>
+              <input type="text" name="Location1" value="<%=dashboard.Location1%>">         </div>
         </div>
         <div class="field">
           <div class="form-group">
@@ -46,13 +46,13 @@
             <label>Hashtag 2</label>
           <div class="ui left icon input">
             <i class="hashtag icon loginIcon"></i>
-              <input type="text" name="Hashtag2" value= "<%=campground.Hashtag2%>">          </div>
+              <input type="text" name="Hashtag2" value= "<%=dashboard.Hashtag2%>">          </div>
         </div>
         <div class="two fields">
         <div class="field">
           <div class="ui left icon input">
             <i class="map icon loginIcon"></i>
-              <input type="text" name="Location2" value="<%=campground.Location2%>">          </div>
+              <input type="text" name="Location2" value="<%=dashboard.Location2%>">          </div>
         </div>
         <div class="field">
           <div class="form-group">
@@ -70,13 +70,13 @@
           <label>Hashtag 3</label>
           <div class="ui left icon input">
             <i class="hashtag icon loginIcon"></i>
-              <input type="text" name="Hashtag3" value="<%=campground.Hashtag3%>">          </div>
+              <input type="text" name="Hashtag3" value="<%=dashboard.Hashtag3%>">          </div>
         </div>
         <div class="two fields">
         <div class="field">
           <div class="ui left icon input">
             <i class="map icon loginIcon"></i>
-              <input type="text" name="Location3" value="<%=campground.Location3%>">          </div>
+              <input type="text" name="Location3" value="<%=dashboard.Location3%>">          </div>
         </div>
         <div class="field">
           <div class="form-group">

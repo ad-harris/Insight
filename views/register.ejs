@@ -3,7 +3,7 @@
 
 <div class="ui aligned center aligned grid" id = "form-top">
   <div class="column">
-    <h2 class="ui inverted image header">
+    <h2 class="ui inverted image header" id="title">
       <i class="pencil alternate icon"></i>
       <div class="content">
         Sign up to Insight
@@ -35,11 +35,18 @@
 
 
 <style type="text/css">
-    body {
-      background-color: grey;
-      background-image: url(https://images.unsplash.com/photo-1544207916-df3b3a131e35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
-
-    }
+  body {
+    color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url("https://images.unsplash.com/photo-1544207830-96239228a679?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+  }
+  body.active {
+    background-image: url("https://www.solidbackgrounds.com/images/1920x1080/1920x1080-white-solid-color-background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color:black;
+  }
     body > .grid {
       height: 100%;
     }
@@ -50,7 +57,12 @@
       max-width: 450px;
     }
 
-
+    #title {
+      color:white;
+    }
+    #title.active {
+      color:black;
+    }
 
   </style>
 

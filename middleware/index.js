@@ -1,15 +1,15 @@
-var Campground = require("../models/campground");
+var Dashboard = require("../models/dashboard");
 var Comment = require("../models/comment");
 var middlewareObj =  {};
 
-middlewareObj.checkCampgroundOwnership = function(req,res,next){
+middlewareObj.checkDashboardOwnership = function(req,res,next){
   if(req.isAuthenticated()){
-      Campground.findById(req.params.id, function(err, foundCampground){
+      Dashboard.findById(req.params.id, function(err, foundDashboard){
         if(err){
-            req.flash("error", "Campground not found");
-            res.redirect("/campgrounds")
+            req.flash("error", "Dashboard not found");
+            res.redirect("/home")
         } else {
-          if(foundCampground.author.id.equals(req.user._id)){ //strange equating an mongoose object to a string (needs that .equals method)
+          if(foundDashboard.author.id.equals(req.user._id)){ //strange equating an mongoose object to a string (needs that .equals method)
             next();
           } else {
             req.flash("error", "You do not have permission to do that.");
@@ -28,7 +28,7 @@ middlewareObj.checkCommentOwnership = function(req,res,next){
   if(req.isAuthenticated()){
       Comment.findById(req.params.comment_id, function(err, foundComment){
         if(err){
-            res.redirect("/campgrounds")
+            res.redirect("/home")
         } else {
           if(foundComment.author.id.equals(req.user._id)){ //strange equating an mongoose object to a string (needs that .equals method)
             next();

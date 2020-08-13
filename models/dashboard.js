@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-var campgroundSchema = new mongoose.Schema({
+var dashboardSchema = new mongoose.Schema({
    DashboardName: String,
    Location1: String,
    Hashtag1: String,
@@ -24,4 +24,4 @@ var campgroundSchema = new mongoose.Schema({
 });
 
 // Compile and export Campground DB model from Schema (Campground  is now name of DB for reference on ATOM. Campgrounds is name of DB on MongoDB as auto-pluralised)
-module.exports = mongoose.model("Campground", campgroundSchema);
+module.exports = mongoose.model("Dashboard", dashboardSchema);

@@ -1,7 +1,7 @@
 const express = require("express");
 
 const router = express.Router();
-var Campground = require("../models/campground");
+var Dashboard = require("../models/dashboard");
 var Comment = require("../models/comment");
 var passport = require("passport");
 var User = require("../models/user");
@@ -26,8 +26,7 @@ router.post("/register", function(req,res){
       return res.redirect("/register");
     } else {
       passport.authenticate("local")(req,res, function() {
-        req.flash("success", "Welcome to YelpCamp "+user.username);
-        res.redirect("/campgrounds")
+        res.redirect("/home")
       });
     }
   });
@@ -41,7 +40,7 @@ router.get("/login", function(req,res){
 //login logic
 router.post("/login", passport.authenticate("local",
 {
-  successRedirect:"/campgrounds",
+  successRedirect:"/home",
   failureRedirect: "/login",
 }), function(req,res){
 });
@@ -69,12 +68,12 @@ router.get("/show/COVID", middleware.isLoggedIn, function(req,res){
 router.get("/dashboard", middleware.isLoggedIn, function(req, res){
   console.log(req.user);
 //finds and returns all campgrounds from DB
-Campground.find({}, function(err, allcampgrounds){
+Dashboard.find({}, function(err, alldashboards){
     if(err){
       console.log(err);
     } else{
 //renders campgrounds page and passes allcampgrounds to campgrounds.ejs as campgrounds
-      res.render("dashboard", {campgrounds :allcampgrounds, currentUser: req.user});
+      res.render("dashboard", {dashboards :alldashboards, currentUser: req.user});
     }
   });
 });

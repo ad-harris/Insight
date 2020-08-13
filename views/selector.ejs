@@ -6,7 +6,7 @@
 
 
     <div id="index-header">
-     		<h1 style="font-size:3em" class = "ui inverted header">Select a Social Media Source</h1>
+     		<h1 style="font-size:3em" id="headselect"class = "ui inverted header">Select a Social Media Source</h1>
         <br>
         <br>
     </div>
@@ -19,7 +19,7 @@
             <div class="middle aligned row icons">
 
               <div class="column">
-                <div class="ui inverted icon header  iconsleft">
+                <div  class="ui inverted icon header  iconsleft">
                   <a class="icontext" href="/report"><i class="twitter square  icon"></i>
                     Twitter</a>
                 </div>
@@ -35,7 +35,7 @@
               <div class="column">
                 <div class="ui inverted icon header iconsright">
                   <a class="icontext" style="text-decoration:none" href="#">
-                    <i class="tumblr square icon"></i>
+                    <i id="select" class="tumblr square icon"></i>
                     Tumblr
                   </a>
                 </div>
@@ -85,11 +85,18 @@
 
 
   <style type="text/css">
-      body {
-        background-color: grey;
-        background-image: url(https://images.unsplash.com/photo-1544207830-96239228a679?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
-
-      }
+    body {
+      color: white;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-image: url("https://images.unsplash.com/photo-1544207830-96239228a679?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+    }
+    body.active {
+      background-image: url("https://www.solidbackgrounds.com/images/1920x1080/1920x1080-white-solid-color-background.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color:black;
+    }
 
       #index-header {
         z-index: 1;
@@ -102,6 +109,10 @@
         color: #fff;
       }
 
+
+#select.active {
+  color: black;
+}
 
     </style>
 

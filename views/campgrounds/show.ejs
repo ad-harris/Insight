@@ -4,10 +4,10 @@
       <div class="container">
 
 
-      <h1 class="ui inverted header"><%=campground.DashboardName%> Dashboard:</h1>
-                        <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
-                        <a class="ui inverted mini orange button" href="/campgrounds/<%=campground._id%>/edit">Edit</a>
-                        <form class="delete-form" action="/campgrounds/<%=campground._id%>?_method=DELETE" method="post">
+      <h1 class="ui inverted header"><%=dashboard.DashboardName%> Dashboard:</h1>
+                        <% if(currentUser && dashboard.author.id.equals(currentUser._id)){ %>
+                        <a class="ui inverted mini orange button" href="/campgrounds/<%=dashboard._id%>/edit">Edit</a>
+                        <form class="delete-form" action="/campgrounds/<%=dashboard._id%>?_method=DELETE" method="post">
                           <button class="ui inverted mini red button" type="submit" name = "button">Delete</button>
                         </form>
                         <% } %>
@@ -16,7 +16,7 @@
                     <div class="col-lg-6">
                       <div class="line-chart">
                         <div class="aspect-ratio">
-                      		<h3>#<%=campground.Hashtag1%>  -  Location: <%=campground.Location1%></h3>
+                      		<h3>#<%=dashboard.Hashtag1%>  -  Location: <%=dashboard.Location1%></h3>
                           <canvas id="chartMASKS"></canvas>
                         </div>
                       </div>
@@ -26,7 +26,7 @@
                     <div class="col-lg-6">
                       <div class="line-chart">
                         <div class="aspect-ratio">
-                      		<h3>#<%=campground.Hashtag2%>  -  Location: <%=campground.Location2%></h3>
+                      		<h3>#<%=dashboard.Hashtag2%>  -  Location: <%=dashboard.Location2%></h3>
                           <canvas id="chartNHS"></canvas>
                         </div>
                       </div>
@@ -42,7 +42,7 @@
                   <div class="col-lg-6">
                       <div class="line-chart">
                         <div class="aspect-ratio">
-                      		<h3>#<%=campground.Hashtag3%>  -  Location: <%=campground.Location3%> </h3>
+                      		<h3>#<%=dashboard.Hashtag3%>  -  Location: <%=dashboard.Location3%> </h3>
         <canvas id="chartHancock"></canvas>                        </div>
                       </div>
                   </div>
@@ -102,6 +102,12 @@
               background-repeat: no-repeat;
               background-attachment: fixed;
               background-image: url("https://images.unsplash.com/photo-1544207830-96239228a679?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+            }
+            body.active {
+              background-image: url("https://www.solidbackgrounds.com/images/1920x1080/1920x1080-white-solid-color-background.jpg");
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              color:black;
             }
 
           </style>

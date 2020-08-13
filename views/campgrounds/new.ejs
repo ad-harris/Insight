@@ -4,13 +4,13 @@
 
 <div class="ui aligned center aligned grid" id = "form-top">
   <div class="column">
-    <h2 class="ui inverted image header">
+    <h2 id="newhead" class="ui inverted image header">
     <i class=" plus icon"></i>
       <div class="content">
         Create new Dashboard
       </div>
     </h2>
-    <form class="ui large form" action="/campgrounds" method="post">
+    <form class="ui large form" action="/home" method="post">
       <div class="ui stacked segment">
         <div class="field">
           <div class="ui left icon input">
@@ -114,6 +114,14 @@
     body {
       background-color: grey;
       background-image: url(https://images.unsplash.com/photo-1544207916-df3b3a131e35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+
+    }
+
+    body.active {
+      background-image: url("https://www.solidbackgrounds.com/images/1920x1080/1920x1080-white-solid-color-background.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color:black;
 
     }
     body > .grid {

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-var Campground = require("../models/campground");
+var Dashboard = require("../models/dashboard");
 var Comment = require("../models/comment");
 var middleware = require("../middleware");
 
@@ -13,15 +13,15 @@ router.get("/", function(req, res){
 
 
 //campgrounds page route
-router.get("/campgrounds",middleware.isLoggedIn, function(req, res){
+router.get("/home",middleware.isLoggedIn, function(req, res){
   console.log(req.user);
 //finds and returns all campgrounds from DB
-Campground.find({}, function(err, allcampgrounds){
+Dashboard.find({}, function(err, alldashboards){
     if(err){
       console.log(err);
     } else{
 //renders campgrounds page and passes allcampgrounds to campgrounds.ejs as campgrounds
-      res.render("campgrounds/index", {campgrounds :allcampgrounds, currentUser: req.user});
+      res.render("campgrounds/index", {dashboards :alldashboards, currentUser: req.user});
     }
   });
 });
@@ -33,7 +33,7 @@ router.get("/campgrounds/new", middleware.isLoggedIn, function(req, res){
 
 
 //create new campgrounds post request
-router.post("/campgrounds", middleware.isLoggedIn, function(req, res){
+router.post("/home", middleware.isLoggedIn, function(req, res){
 //gets data from new campgrounds form and stores  in  variables. Then gathers in newCampGround variable
   var DashboardName = req.body.DashboardName;
   var Hashtag1 = req.body.Hashtag1;
@@ -46,9 +46,9 @@ router.post("/campgrounds", middleware.isLoggedIn, function(req, res){
     id: req.user._id,
     username: req.user.username
   }
-  var newCampGround = {DashboardName: DashboardName, Hashtag1: Hashtag1, Location1: Location1, Hashtag2: Hashtag2, Location2: Location2, Hashtag3: Hashtag3, Location3: Location3, author: author};
+  var newDashboard = {DashboardName: DashboardName, Hashtag1: Hashtag1, Location1: Location1, Hashtag2: Hashtag2, Location2: Location2, Hashtag3: Hashtag3, Location3: Location3, author: author};
 //creates new Campground by adding newCampGround variable to CampgroundDB
-  Campground.create(newCampGround, function(err, newlyCreated){
+  Dashboard.create(newDashboard, function(err, newlyCreated){
     if(err){
       console.log(err)
     } else {
@@ -63,30 +63,30 @@ router.post("/campgrounds", middleware.isLoggedIn, function(req, res){
 //show page route
 router.get('/campgrounds/:id', function(req,res){
 //find campground with required ID
-  Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
+  Dashboard.findById(req.params.id).populate("comments").exec(function(err, foundDashboard){
   if(err){
     console.log(err);
   } else
 //renders show template with foundCampground data from DB
-   res.render("campgrounds/show", {campground: foundCampground});
+   res.render("campgrounds/show", {dashboard: foundDashboard});
  })
 });
 
 
 //edti campground routes
-router.get("/campgrounds/:id/edit", middleware.checkCampgroundOwnership, function(req,res){
-      Campground.findById(req.params.id, function(err, foundCampground){
-            res.render("campgrounds/edit", {campground: foundCampground});
+router.get("/campgrounds/:id/edit", middleware.checkDashboardOwnership, function(req,res){
+      Dashboard.findById(req.params.id, function(err, foundDashboard){
+            res.render("campgrounds/edit", {dashboard: foundDashboard});
 });
 });
 
 //update campground route
-router.put("/campgrounds/:id",  middleware.checkCampgroundOwnership,function(req,res){
+router.put("/campgrounds/:id",  middleware.checkDashboardOwnership,function(req,res){
 
-  Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err,updatedCampground){
+  Dashboard.findByIdAndUpdate(req.params.id, req.body.dashboardground, function(err,updatedDashboard){
     if(err){
       console.log(err);
-      res.redirect("/campgrounds");
+      res.redirect("/home");
     } else {
       res.redirect("/campgrounds/" + req.params.id);
     }
@@ -94,12 +94,12 @@ router.put("/campgrounds/:id",  middleware.checkCampgroundOwnership,function(req
 });
 
 //destroy routes
-router.delete("/campgrounds/:id", middleware.checkCampgroundOwnership, function(req,res){
-  Campground.findByIdAndRemove(req.params.id, function(err){
+router.delete("/campgrounds/:id", middleware.checkDashboardOwnership, function(req,res){
+  Dashboard.findByIdAndRemove(req.params.id, function(err){
     if(err){
-      res.redirect("/campgrounds");
+      res.redirect("/home");
   } else {
-    res.redirect("/campgrounds");
+    res.redirect("/home");
   }
 });
 });

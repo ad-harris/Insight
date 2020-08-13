@@ -26,6 +26,14 @@ i {
   color:white;
 }
 
+i.active {
+  color: black;
+}
+
+a {
+  color: blue;
+}
+
 .icontext {
   color:white;
 }
@@ -73,4 +81,25 @@ i {
 
 #form-top{
   margin-top:100px;
+}
+
+.icontext.active {
+  color: black;
+}
+
+#headselect.active {
+  color:black;
+}
+
+#dashheader.active {
+  color:black;
+}
+
+#dashpersonal.active {
+  color:black;
+}
+
+
+#newhead.active {
+  color:black;
 }

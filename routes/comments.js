@@ -1,23 +1,23 @@
 const express = require("express");
 const router = express.Router();
-var Campground = require("../models/campground");
+var Dashboard = require("../models/dashboard");
 var Comment = require("../models/comment");
 var middleware = require("../middleware");
 
 ///////////////////////////////////////////////////////////////////////////
 //COMMENTS  ROUTES
 router.get("/campgrounds/:id/comments/new", middleware.isLoggedIn, function(req,res){
-  Campground.findById(req.params.id, function(err, campground){
+  Dashboard.findById(req.params.id, function(err, dashboard){
     if(err){
       console.log("Error")
     } else {
-      res.render("comments/new", {campground:campground})
+      res.render("comments/new", {dashboard:dashboard})
     }
   })
 });
 
 router.post("/campgrounds/:id/comments", middleware.isLoggedIn, function(req,res){
-  Campground.findById(req.params.id, function(err, campground){
+  Dashboard.findById(req.params.id, function(err, dashboard){
     if(err){
       req.flash("error", "Something went wrong.")
       console.log(err);
@@ -46,7 +46,7 @@ router.get("/campgrounds/:id/comments/:comment_id/edit", middleware.checkComment
     if(err){
       res.redirect("back");
     } else {
-      res.render("comments/edit", {comment:foundComment, campground_id:req.params.id});
+      res.render("comments/edit", {comment:foundComment, dashboard_id:req.params.id});
     }
   });
 });

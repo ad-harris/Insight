@@ -5,7 +5,7 @@
 <div class="container">
 
 
-<h1 class="ui inverted header">Shared dashboards:</h1>
+<h1 id= "dashheader" class="ui inverted header">Shared dashboards:</h1>
 
 
   <div class="row choices">
@@ -134,7 +134,7 @@
 
 
       </div>
-      <h1 class="ui inverted header">Personal dashboards:</h1>
+      <h1 id= "dashpersonal" class="ui inverted header">Personal dashboards:</h1>
 
 
         <div class="row choices">
@@ -142,13 +142,13 @@
             <div class="col-lg-10">
               <div class="ui four column stackable center aligned grid">
                   <div class="middle aligned row icons">
-                        <% campgrounds.forEach(function(campground){ %>
-                          <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+                        <% dashboards.forEach(function(dashboard){ %>
+                          <% if(currentUser && dashboard.author.id.equals(currentUser._id)){ %>
 
                           <div class="column">
                             <div class="ui inverted icon header iconsleft  ">
-                              <a class="icontext dash" href="/campgrounds/<%=campground._id %>"><i class="react  icon"></i>
-                               <%= campground.DashboardName %></a>
+                              <a class="icontext dash" href="/campgrounds/<%=dashboard._id %>"><i class="react  icon"></i>
+                               <%= dashboard.DashboardName %></a>
                             </div>
                               <% } %>
                           </div>
@@ -182,11 +182,17 @@
 
 
   <style type="text/css">
-      body {
-        background-color: grey;
-        background-image: url(https://images.unsplash.com/photo-1544207830-96239228a679?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
-
-      }
+    body {
+      color: white;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-image: url("https://images.unsplash.com/photo-1544207830-96239228a679?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+    }
+    body.active {
+      background-image: url("https://www.solidbackgrounds.com/images/1920x1080/1920x1080-white-solid-color-background.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color:black;
 
       #index-header {
         z-index: 1;
