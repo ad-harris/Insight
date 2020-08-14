@@ -83,7 +83,7 @@ router.get("/campgrounds/:id/edit", middleware.checkDashboardOwnership, function
 //update campground route
 router.put("/campgrounds/:id",  middleware.checkDashboardOwnership,function(req,res){
 
-  Dashboard.findByIdAndUpdate(req.params.id, req.body.dashboardground, function(err,updatedDashboard){
+  Dashboard.findByIdAndUpdate(req.params.id, req.body.dashboard, function(err,updatedDashboard){
     if(err){
       console.log(err);
       res.redirect("/home");
