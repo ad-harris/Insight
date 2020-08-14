@@ -103,3 +103,19 @@ a {
 #newhead.active {
   color:black;
 }
+
+#divider.active {
+  color: black;
+}
+
+#indexmain.active {
+  color: black;
+}
+
+#dashhead.active {
+  color: black;
+}
+
+#dashheadpersonal.active {
+  color: black;
+}

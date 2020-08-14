@@ -4,7 +4,7 @@
       <div class="container">
 
 
-      <h1 class="ui inverted header"><%=dashboard.DashboardName%> Dashboard:</h1>
+      <h1 id="dashheadpersonal" class="ui inverted header"><%=dashboard.DashboardName%> Dashboard:</h1>
                         <% if(currentUser && dashboard.author.id.equals(currentUser._id)){ %>
                         <a class="ui inverted mini orange button" href="/campgrounds/<%=dashboard._id%>/edit">Edit</a>
                         <form class="delete-form" action="/campgrounds/<%=dashboard._id%>?_method=DELETE" method="post">

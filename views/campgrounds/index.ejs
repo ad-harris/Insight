@@ -6,7 +6,7 @@
 
 
     <div id="index-header">
-     		<h1 style="font-size:4em" class = "ui inverted header">Welcome to Insight, <%= currentUser.username %> </h1>
+     		<h1 id = "indexmain" style="font-size:4em" class = "ui inverted header">Welcome to Insight, <%= currentUser.username %> </h1>
         <br>
         <br>
     </div>
@@ -15,7 +15,7 @@
   <div class="row choices">
       <div class="col-lg-12">
         <div class="ui two column stackable center aligned grid">
-            <div class="ui inverted vertical divider">Or</div>
+            <div id="divider" class="ui inverted vertical divider">Or</div>
             <div class="middle aligned row icons">
 
               <div class="column">
@@ -49,11 +49,19 @@
 
 
   <style type="text/css">
-      body {
-        background-color: grey;
-        background-image: url(https://images.unsplash.com/photo-1544207830-96239228a679?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+    body {
+      background-color: grey;
+      background-image: url('../images/ReportsBackground.jpg');
 
-      }
+    }
+
+    body.active {
+      background-image: url("https://www.solidbackgrounds.com/images/1920x1080/1920x1080-white-solid-color-background.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color:black;
+
+    }
 
       #index-header {
         z-index: 1;
