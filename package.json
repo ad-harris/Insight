@@ -4,7 +4,6 @@
   "description": "An AngularJS 1.6 and node.js twitter sentiment analysis visualizer web application, to visualize and analyze active twitter data  ",
   "main": "index.js",
   "scripts": {
-    "test": "",
     "start": "node index.js"
   },
   "repository": {
