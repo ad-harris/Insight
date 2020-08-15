@@ -1,12 +1,3 @@
-
-background-slider/public/stylesheets/landing.css
-@nax3t
-nax3t Add full screen background slider
-Latest commit 2b7359f on 26 Nov 2016
- History
- 1 contributor
-82 lines (75 sloc)  1.42 KB
-
 body {
   background-color: #000;
 }
@@ -105,7 +96,7 @@ body {
   }
 }
 
-/* Older browser support - class added by modernizr */
+/* Older browser support - no animations */
 .no-cssanimations .slideshow li {
 	opacity: 1;
 }

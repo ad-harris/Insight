@@ -1,5 +1,7 @@
 var mongoose = require("mongoose");
 
+//define dashboard model and export 
+
 var dashboardSchema = new mongoose.Schema({
    DashboardName: String,
    Location1: String,

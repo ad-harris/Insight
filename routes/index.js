@@ -1,5 +1,4 @@
 const express = require("express");
-
 const router = express.Router();
 var Dashboard = require("../models/dashboard");
 var Comment = require("../models/comment");
@@ -8,11 +7,6 @@ var User = require("../models/user");
 var middleware = require("../middleware");
 
 
-
-
-
-//////////////////////////////////////////Auth ROUTES
-//regsiter form
 router.get("/register", function(req,res){
   res.render("register");
 });
@@ -67,12 +61,11 @@ router.get("/show/COVID", middleware.isLoggedIn, function(req,res){
 
 router.get("/dashboard", middleware.isLoggedIn, function(req, res){
   console.log(req.user);
-//finds and returns all campgrounds from DB
+//finds and returns all dashboards from DB
 Dashboard.find({}, function(err, alldashboards){
     if(err){
       console.log(err);
     } else{
-//renders campgrounds page and passes allcampgrounds to campgrounds.ejs as campgrounds
       res.render("dashboard", {dashboards :alldashboards, currentUser: req.user});
     }
   });

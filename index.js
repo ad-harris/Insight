@@ -27,7 +27,7 @@ app.use(express.static('public'));
 
 
 var commentRoutes = require("./routes/comments"),
-    campgroundRoutes = require("./routes/campgrounds"),
+    campgroundRoutes = require("./routes/dashboards"),
     indexRoutes = require("./routes/index")
 
 

@@ -1,9 +1,12 @@
+//getResponse set up for Index1.ejs page
+
 
 app.controller("main-ctrl", ["$scope", "$http", function ($scope, $http) {
     $scope.title = "Twitter Sentiment Visualizer";
 
        $scope.getResponse = function () {
-           $http.get("/results/" + $scope.searchInput).then(function (data) {
+          //$http.get("/results/dog" ).then(function (data) {     use to hardcorde
+          $http.get("/results/" + $scope.searchInput).then(function (data) {
 
                var twitterData = data.data;
                twitterData = twitterData.split(/[{}]+/);

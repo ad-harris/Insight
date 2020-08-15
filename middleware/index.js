@@ -2,6 +2,8 @@ var Dashboard = require("../models/dashboard");
 var Comment = require("../models/comment");
 var middlewareObj =  {};
 
+//Define auth middleware for pages as  well as Dashboard and Comment Ownership
+
 middlewareObj.checkDashboardOwnership = function(req,res,next){
   if(req.isAuthenticated()){
       Dashboard.findById(req.params.id, function(err, foundDashboard){
@@ -21,8 +23,6 @@ middlewareObj.checkDashboardOwnership = function(req,res,next){
     res.redirect("back")
   }
 };
-
-
 
 middlewareObj.checkCommentOwnership = function(req,res,next){
   if(req.isAuthenticated()){
@@ -50,7 +50,5 @@ middlewareObj.isLoggedIn = function(req,res,next){
   req.flash("error", "Please log in.")
   res.redirect("/login")
 }}
-
-
 
 module.exports = middlewareObj
